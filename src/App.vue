@@ -10,23 +10,22 @@
       <div class="tab-wrapper">
         <!-- tab栏 -->
         <div class="tab-bar">
-          <a class="bar-item active">
+          <router-link to="/results" class="bar-item active">
             搜索结果
-          </a>
-          <a class="bar-item">
+          </router-link>
+          <router-link to="/player" class="bar-item ">
             歌曲播放
-          </a>
-          <a class="bar-item">
+          </router-link>
+          <router-link to="/video" class="bar-item ">
             mv
-          </a>
-          <a class="bar-item">
-            歌曲评论>
-          </a>
-         
+          </router-link>
+          <router-link to="/comment" class="bar-item ">
+            歌曲评论
+          </router-link>
         </div>
         <!-- 对应的内容区域 -->
         <div class="tab-content">
-
+          <router-view></router-view>
         </div>
       </div>
     </div>
