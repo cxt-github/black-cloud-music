@@ -10,7 +10,7 @@
       <div class="tab-wrapper">
         <!-- tab栏 -->
         <div class="tab-bar">
-          <router-link to="/results" class="bar-item active">
+          <router-link to="/results" class="bar-item ">
             搜索结果
           </router-link>
           <router-link to="/player" class="bar-item ">
