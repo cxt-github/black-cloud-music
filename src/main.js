@@ -2,7 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 
+import { Carousel, CarouselItem } from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
 //导入子组件
+import Slider from './components/slider.vue'
 import Results from './components/results.vue'
 import Comment from './components/comment.vue'
 import Player from './components/player.vue'
@@ -19,6 +23,8 @@ import './assets/css/comment.css'
 Vue.config.productionTip = false
 //用包
 Vue.use(VueRouter)
+Vue.component(Carousel.name,Carousel);
+Vue.component(CarouselItem.name,CarouselItem);
 
 // 2. 定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是
@@ -26,11 +32,13 @@ Vue.use(VueRouter)
 // 或者，只是一个组件配置对象。
 // 我们晚点再讨论嵌套路由。
 const routes = [
+  { path: '/', redirect: '/slider'}, //重定向
+  { path: '/slider', component: Slider },
   { path: '/results', component: Results },
   { path: '/comment', component: Comment },
   { path: '/player', component: Player },
   { path: '/video', component: Video },
-  
+
 ]
 
 const router = new VueRouter({
