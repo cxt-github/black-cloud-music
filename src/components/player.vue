@@ -25,5 +25,5 @@ export default {
 </script>
 
 <style>
-@import url('../assets/css/player.css');
+
 </style>

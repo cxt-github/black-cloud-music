@@ -40,5 +40,5 @@ export default {
 </script>
 
 <style>
-@import url('../assets/css/results.css');
+
 </style>

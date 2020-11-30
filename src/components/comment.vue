@@ -63,5 +63,5 @@ export default {
 </script>
 
 <style>
-@import url('../assets/css/comment.css');
+
 </style>

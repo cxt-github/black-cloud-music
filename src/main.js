@@ -8,6 +8,14 @@ import Comment from './components/comment.vue'
 import Player from './components/player.vue'
 import Video from './components/video.vue'
 
+//导入样式
+import './assets/css/index.css'
+import './assets/css/iconfont.css'
+import './assets/css/results.css'
+import './assets/css/player.css'
+import './assets/css/video.css'
+import './assets/css/comment.css'
+
 Vue.config.productionTip = false
 //用包
 Vue.use(VueRouter)
