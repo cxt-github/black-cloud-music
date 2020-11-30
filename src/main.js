@@ -42,7 +42,7 @@ const routes = [
   { path: '/slider', component: Slider },
   { path: '/results/:keywords', component: Results },
   { path: '/comment/:id', component: Comment },
-  { path: '/player', component: Player },
+  { path: '/player/:id', component: Player },
   { path: '/video/:mvid', component: Video },
 
 ]

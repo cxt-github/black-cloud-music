@@ -2,8 +2,8 @@
   <div class="result-wrapper">
       <div class="song" v-for="item in musicList" :key="item.id">
         <div class="name">
-          <span class="iconfont icon-play"></span>
-          <a href="" @click.prevent="tocomment(item.id)">{{item.name}}</a>
+          <span class="iconfont icon-play" @click="toPlayer(item.id)"></span>
+          <a href="" @click.prevent="toComment(item.id)">{{item.name}}</a>
           <span class="iconfont icon-editmedia" v-show="item.mvid" @click="toMV(item.mvid)"></span>
         </div>
         <div class="singer">{{item.artists |formatSinger}}</div>
@@ -24,13 +24,18 @@ export default {
 
   methods:{
     //跳转评论页面
-    tocomment(id) {
+    toComment(id) {
       this.$router.push(`/comment/${id}`)
     },
     
     //跳转mv页面
-    toMV(mvid){
+    toMV(mvid) {
       this.$router.push(`/video/${mvid}`)
+    },
+
+    //跳转音乐播放页面
+    toPlayer(id) {
+      this.$router.push(`/player/${id}`)
     }
   },
 
