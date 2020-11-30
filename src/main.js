@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
+import axios from 'axios'
 
 import { Carousel, CarouselItem } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -11,6 +12,11 @@ import Results from './components/results.vue'
 import Comment from './components/comment.vue'
 import Player from './components/player.vue'
 import Video from './components/video.vue'
+
+// 把$axios属性设置给Vue原型
+Vue.prototype.$axios = axios
+// 设置基地址
+axios.defaults.baseURL = 'https://autumnfish.cn'
 
 //导入样式
 import './assets/css/index.css'
@@ -34,7 +40,7 @@ Vue.component(CarouselItem.name,CarouselItem);
 const routes = [
   { path: '/', redirect: '/slider'}, //重定向
   { path: '/slider', component: Slider },
-  { path: '/results', component: Results },
+  { path: '/results/:keywords', component: Results },
   { path: '/comment', component: Comment },
   { path: '/player', component: Player },
   { path: '/video', component: Video },
@@ -43,7 +49,6 @@ const routes = [
 
 const router = new VueRouter({
   routes, // (缩写) 相当于 routes: routes
-  linkActiveClass: 'active', //添加高亮样式
 })
 
 new Vue({

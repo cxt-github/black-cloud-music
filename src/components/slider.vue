@@ -1,6 +1,6 @@
 <template>
   <el-carousel height="400px">
-    <el-carousel-item v-for="item in imgUrlList" :key="item.encodeId">
+    <el-carousel-item v-for="(item,index) in imgUrlList" :key="index">
       <h3 class="small">
           <img :src="item.imageUrl" alt="">
       </h3>
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Axios from 'axios'
+
 export default {
     name: 'slider',
     data() {
@@ -18,7 +18,7 @@ export default {
         }
     },
     async created() {
-      const res =await Axios.get('https://autumnfish.cn/banner')
+      const res =await this.$axios.get('/banner?t=' + Date.now())
     //   console.log(res);
       this.imgUrlList = res.data.banners
     }
