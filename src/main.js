@@ -41,7 +41,7 @@ const routes = [
   { path: '/', redirect: '/slider'}, //重定向
   { path: '/slider', component: Slider },
   { path: '/results/:keywords', component: Results },
-  { path: '/comment', component: Comment },
+  { path: '/comment/:id', component: Comment },
   { path: '/player', component: Player },
   { path: '/video', component: Video },
 

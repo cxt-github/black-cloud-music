@@ -3,7 +3,7 @@
       <div class="song" v-for="item in musicList" :key="item.id">
         <div class="name">
           <span class="iconfont icon-play"></span>
-          <a href="">{{item.name}}</a>
+          <a href="" @click.prevent="tocomment(item.id)">{{item.name}}</a>
           <span class="iconfont icon-editmedia" v-show="item.mvid"></span>
         </div>
         <div class="singer">{{item.artists |formatSinger}}</div>
@@ -19,6 +19,13 @@ export default {
   data() {
     return {
       musicList: [], //歌曲数组
+    }
+  },
+
+  methods:{
+    //跳转评论页面
+    tocomment(id) {
+      this.$router.push(`/comment/${id}`)
     }
   },
 
