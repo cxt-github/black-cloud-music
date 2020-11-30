@@ -43,7 +43,7 @@ const routes = [
   { path: '/results/:keywords', component: Results },
   { path: '/comment/:id', component: Comment },
   { path: '/player', component: Player },
-  { path: '/video', component: Video },
+  { path: '/video/:mvid', component: Video },
 
 ]
 

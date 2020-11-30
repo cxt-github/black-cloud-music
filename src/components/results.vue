@@ -4,7 +4,7 @@
         <div class="name">
           <span class="iconfont icon-play"></span>
           <a href="" @click.prevent="tocomment(item.id)">{{item.name}}</a>
-          <span class="iconfont icon-editmedia" v-show="item.mvid"></span>
+          <span class="iconfont icon-editmedia" v-show="item.mvid" @click="toMV(item.mvid)"></span>
         </div>
         <div class="singer">{{item.artists |formatSinger}}</div>
         <div class="album">《{{item.album.name}}》</div>
@@ -26,6 +26,11 @@ export default {
     //跳转评论页面
     tocomment(id) {
       this.$router.push(`/comment/${id}`)
+    },
+    
+    //跳转mv页面
+    toMV(mvid){
+      this.$router.push(`/video/${mvid}`)
     }
   },
 
