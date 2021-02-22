@@ -39,11 +39,14 @@ export default {
     }
   },
 
-  async created(){
+   created(){
     //获取搜索
-    const res = await this.$axios.get(`/search?keywords=${this.$route.params.keywords}`)
-    // console.log(res);
+    this.$axios.get(`/search?keywords=${this.$route.params.keywords}`)
+    .then(res=>{
+       // console.log(res);
     this.musicList = res.data.result.songs
+    })
+   
   },
 
   //过滤器

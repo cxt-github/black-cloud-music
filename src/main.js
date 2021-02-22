@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import axios from 'axios'
+import 'babel-polyfill';
 
 import { Carousel, CarouselItem } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -29,6 +30,7 @@ import './assets/css/comment.css'
 Vue.config.productionTip = false
 //用包
 Vue.use(VueRouter)
+
 Vue.component(Carousel.name,Carousel);
 Vue.component(CarouselItem.name,CarouselItem);
 
